@@ -68,7 +68,7 @@ var HomeView = Backbone.View.extend({
 	tagName: "li",
 
 	render: function() {
-		console.log("hi jason");
+		console.log("hi jason and jay");
 		this.$("#vehicleList").html("This is the home page");
 
 		return this;
