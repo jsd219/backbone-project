@@ -97,16 +97,19 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	viewHome: function() {
+		$("#vehicleList").html("");
 		var view = new HomeView({ el: "#container" });
 		view.render();
 	},
 
 	viewCars: function() {
+		$("#vehicleList").html("");
 		var view = new VehiclesView({ el: "#container", model: cars });
 		view.render();
 	},
 
 	viewBoats: function() {
+		$("#vehicleList").html("");
 		var view = new VehiclesView({ el: "#container", model: boats });
 		view.render();
 	},
@@ -125,7 +128,6 @@ var NavView = Backbone.View.extend({
 	},
 
 	onClick: function(e){
-		$("#vehicleList").html("");
 		var $li = $(e.target);
 		router.navigate($li.attr("data-url"), { trigger: true });
 	}
