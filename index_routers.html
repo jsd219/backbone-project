@@ -34,15 +34,11 @@
     	<div id="container">
     		<ul id="vehicleList"></ul>
         </div>
-        
-        <script src="js/lib/jquery-min.js"></script>
-        <script src="js/lib/underscore-min.js"></script>
-        <script src="js/lib/backbone-min.js"></script>
 
         <script id="vehiclesTemplate" type="text/html">
         <%= title %> <%= regNum %>
         </script>
-     
-        <script src="js/main.routers.js"></script>
+
+        <script src="js/lib/require.js" data-main="js/main"></script>
     </body>
 </html>
