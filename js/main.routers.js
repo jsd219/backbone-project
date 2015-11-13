@@ -97,25 +97,30 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	viewHome: function() {
-		$("#vehicleList").html("");
-		var view = new HomeView({ el: "#container" });
-		view.render();
+		var view = new HomeView();
+		this.loadView(view);
 	},
 
 	viewCars: function() {
-		$("#vehicleList").html("");
-		var view = new VehiclesView({ el: "#container", model: cars });
-		view.render();
+		var view = new VehiclesView({ model: cars });
+		this.loadView(view);
 	},
 
 	viewBoats: function() {
-		$("#vehicleList").html("");
-		var view = new VehiclesView({ el: "#container", model: boats });
-		view.render();
+		var view = new VehiclesView({ model: boats });
+		this.loadView(view);
 	},
 
 	defaultRoute: function() {
 
+	},
+
+	loadView: function(newView) {
+		
+		if(this.currentView)
+		this.currentView.remove();
+		
+		$("#container").html(newView.render().$el);
 	}
 });
 
