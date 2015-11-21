@@ -117,6 +117,11 @@ var AppRouter = Backbone.Router.extend({
 	},
 
 	loadView: function(newView) {
+		currentView = newView;
+		
+		if (this.currentView)
+			this.currentView.remove();
+		
 		$("#container").html(newView.render().$el);
 	}
 });
